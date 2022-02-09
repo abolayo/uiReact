@@ -1,12 +1,20 @@
 import React from "react";
-import { Navbar, Nav, Container, Button } from "react-bootstrap";
+import logo from "../images/logo.svg";
+import "../styles/Nav.css";
+import { Navbar, Nav, Container } from "react-bootstrap";
 
-function Header(props) {
+function Header() {
   return (
-    <Navbar collapseOnSelect expand="sm" variant="light">
+    <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
       <Container>
         <Navbar.Brand href="/">
-          <span className="logo">logo</span>
+          <img
+            scr={logo}
+            alt="logo"
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+          />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse
@@ -17,20 +25,12 @@ function Header(props) {
             <Nav.Link href="/About" className="about">
               ABOUT
             </Nav.Link>
-            <Nav.Link>
-              {" "}
-              {props.countCartItems ? (
-                <button className="badge">{props.countCartItems}</button>
-              ) : (
-                ""
-              )}
-            </Nav.Link>{" "}
             <Nav.Link href="/Reported" className="reported">
               WHAT CAN BE REPORTED
             </Nav.Link>
-            <Button className="contact" variant="outline-danger">
+            <Nav.Link href="/ContactPage" className="contact">
               CONTACT US
-            </Button>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
